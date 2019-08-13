@@ -1,0 +1,17 @@
+<div fxLayout="column" fxLayoutGap="16px">
+  <span>{{ data?.length > 0 ? 'Комментарий. Редактирование' : 'Комменатрий. Создание'}}</span>
+
+  <mat-form-field appearance="outline" floatLabel="always" color="accent">
+    <textarea matInput [(ngModel)]="comment" matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="3">
+    </textarea>
+  </mat-form-field>
+
+  <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="16px">
+    <button mat-raised-button type="button" [mat-dialog-close]="comment" color="primary">
+      Сохранить
+    </button>
+    <button mat-button type="button" (click)="closeDialog()" color="primary">
+      Отмена
+    </button>
+  </div>
+</div>

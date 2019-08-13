@@ -1,0 +1,22 @@
+.file-tree-container {
+  height: 100%;
+  overflow: hidden;
+  padding: 16px;
+
+  .file-tree-container-title {
+    height: 60px;
+
+    span {
+      font-size: 24px;
+      cursor: default;
+    }
+
+    input {
+      display: none;
+    }
+
+    .hint-text {
+      font-size: 20px;
+    }
+  }
+}

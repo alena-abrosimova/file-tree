@@ -1,0 +1,64 @@
+.custom-tooltip {
+  font-size: 14px;
+  max-width: 50vw !important;
+  word-wrap: break-word !important;
+}
+
+.green-button {
+  color: rgba(0, 115, 89, 0.7) !important;
+
+  &:hover {
+    color: rgb(0, 115, 89) !important;
+  }
+}
+
+.yellow-button {
+  color: rgba(181, 193, 75, 0.7) !important;
+
+  &:hover {
+    color: rgb(181, 193, 75) !important;
+  }
+}
+
+.red-button {
+  color: rgba(115, 24, 28, 0.7) !important;
+
+  &:hover {
+    color: rgb(0115, 24, 28) !important;
+  }
+}
+
+.mat-tree {
+  background: transparent;
+}
+
+.gray-text, .mat-button, .mat-dialog-container, .hint-text {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.mat-dialog-container {
+  background: #424242;
+}
+
+.mat-raised-button {
+  color: #424242;
+  text-transform: uppercase;
+}
+
+.is-changed, .is-new, .is-deleted {
+  font-style: italic;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.is-changed {
+  background: #593894;
+}
+
+.is-new{
+  background: rgb(0, 115, 89);
+}
+
+.is-deleted{
+  background: rgb(115, 24, 28, 0.7);
+}

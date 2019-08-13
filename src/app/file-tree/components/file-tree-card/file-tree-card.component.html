@@ -1,0 +1,19 @@
+<div class="tree-container">
+  <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+    <mat-tree-node *matTreeNodeDef="let item" matTreeNodePadding>
+      <button mat-icon-button disabled>
+        <mat-icon class="gray-text">more_vert</mat-icon>
+      </button>
+
+      <file-tree-item [fileTreeItem]="item"></file-tree-item>
+    </mat-tree-node>
+
+    <mat-tree-node *matTreeNodeDef="let item; when: hasChild" matTreeNodePadding>
+      <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle' + item.name">
+        <mat-icon class="gray-text"> {{ treeControl.isExpanded(item) ? 'remove' : 'add' }}</mat-icon>
+      </button>
+
+      <file-tree-item [fileTreeItem]="item" (commentChangedEvent)="commentChangedHandler($event)"></file-tree-item>
+    </mat-tree-node>
+  </mat-tree>
+</div>

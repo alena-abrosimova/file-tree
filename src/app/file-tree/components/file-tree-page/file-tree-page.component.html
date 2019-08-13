@@ -1,0 +1,22 @@
+<div class="file-tree-container" fxLayout="column" fxLayoutGap="16px">
+  <div class="file-tree-container-title" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="16px">
+    <span class="gray-text">Файловое дерево</span>
+    <ng-container *ngIf="filesIsIdentical && this.doubleFiles.length > 0">
+      <span class="is-new hint-text">Новые</span>
+      <span class="is-changed hint-text">Измененные</span>
+      <span class="is-deleted hint-text">Удаленные</span>
+    </ng-container>
+    <span fxFlex></span>
+    <ng-container>
+      <input #fileUpload type="file" accept=".csv" (change)="prepareFile($event)">
+      <button mat-raised-button type="button" color="accent" (click)="fileUpload.click()">
+        Загрузить CSV
+      </button>
+    </ng-container>
+    <button mat-button type="button" color="accent" (click)="clearFileTree()">
+      Очистить
+    </button>
+  </div>
+
+  <file-tree-card [fileTree]="fileTree" (commentChangedEvent)="commentChangedHandler($event)"></file-tree-card>
+</div>

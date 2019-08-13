@@ -1,0 +1,18 @@
+<div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="flex-start center">
+  <span [matTooltip]="fileTreeItem.comment" matTooltipClass="custom-tooltip"
+        [ngClass]="{'gray-text': true, 'is-changed': isChanged, 'is-new': isNew, 'is-deleted': isDeleted}">
+    {{ fileTreeItem.name }}
+  </span>
+
+  <button mat-icon-button *ngIf="!fileTreeItem.comment" class="green-button" (click)="openCommentDialog()">
+    <mat-icon matTooltip="Добавить комментарий" matTooltipClass="custom-tooltip">comment</mat-icon>
+  </button>
+
+  <button mat-icon-button *ngIf="fileTreeItem.comment" class="yellow-button" (click)="openCommentDialog()">
+    <mat-icon matTooltip="Редактировать комментарий" matTooltipClass="custom-tooltip">edit</mat-icon>
+  </button>
+
+  <button mat-icon-button *ngIf="fileTreeItem.comment" class="red-button" (click)="deleteComment()">
+    <mat-icon matTooltip="Удалить комментарий" matTooltipClass="custom-tooltip">delete</mat-icon>
+  </button>
+</div>
